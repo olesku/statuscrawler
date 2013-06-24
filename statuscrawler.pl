@@ -18,6 +18,7 @@ no warnings 'recursion';
 ##############################
 
 my @ignoreStatusCodes = ( "200" );
+my $reportSenderAddress = 'crawler@mydomain.com';
 my $userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31";
 
 ################################################################
@@ -193,7 +194,7 @@ if (length($report) > 5) {
 	foreach my $mailAddr (split(",", $options{m})) {
 		if ($mailAddr =~ m/[A-Za-z0-9.-]+@[A-Za-z0-9.-]/) {
 			print("Sending report to " . $mailAddr . ".\n");
-			sendMail($mailAddr, 'drift@vgnett.no', 'HTTP status crawler report', $report);
+			sendMail($mailAddr, $reportSenderAddress, 'HTTP status crawler report', $report);
 		}
 	}
 }
