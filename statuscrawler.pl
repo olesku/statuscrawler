@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# statuscrawler - Crawls all pages on a specified url, logs all statuses and mail a report.
+# statuscrawler - Crawls all pages on a specified url, logs all statuses and mails a report.
 # Written by Ole Fredrik Skudsvik <ole.skudsvik@gmail.com>
 
 use POSIX;
@@ -14,7 +14,7 @@ use warnings;
 no warnings 'recursion';
 
 ##############################
-#  Configuration variables.	 #
+#  Configuration variables.  #
 ##############################
 
 my @ignoreStatusCodes = ( "200" );
@@ -168,7 +168,7 @@ sub sendMail {
 }
 
 
-getopts("hlm:", \%options);
+getopts("hl:m:", \%options);
 
 if (defined($options{l}) && !($options{l} =~ m/^(\d+)$/)) {
 	die("Level must be a number.\n");
