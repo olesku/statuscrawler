@@ -5,7 +5,7 @@ Crawls all pages on a specified url, logs all statuses and mail a report.
 
 Usage:
 
-./statuscralwer.pl -l <levels> -m <mailadresses> http://yoursite.com/
+./statuscralwer.pl -l levels -m mailadresses http://yoursite.com/
 
 * mailadresses is separated by comma.
 * If you do not specify a level it will crawl the whole site.
